@@ -81,3 +81,11 @@ gz=10000;
 变量名要有意义；
 
 驼峰命名法；
+var temp；  
+var apple1='青苹果';  
+var apple2='红苹果';  
+temp=apple1;  
+apple1=apple2;  
+apple2=temp;  
+console.log(apple1)  
+console.log(apple2)  
