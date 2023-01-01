@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="登录.css">
+    <style>
+        body {
+    background:url("../xc4.jpg") no-repeat center center fixed;
+    background-size:100% 100%;
+ 
+}
+ 
+body{   
+    width: 100%;   
+    height: 100%;   
+    /* font-family: 'Open Sans',sans-serif;    */
+    margin: 0; 
+    /* background-color: rgb(232, 175, 175);  */
+}   
+.login {
+    position: absolute;
+      /*用position 当浏览器缩小的时候,盒子位置不变  */
+    top: 50%;   
+    left:50%;   
+    margin: -150px 0 0 -150px;   
+    width: 300px;   
+    height: 300px;   
+}
+.login h1{   
+    color: rgb(12, 7, 7);   
+    text-shadow:0 0 10px;   
+    letter-spacing: 1px;   
+    text-align: center;
+    font-size: 2em;   
+    margin: 0.67em 0;     
+}
+#uname,#pwd{   
+    width: 278px;   
+    height: 18px;   
+    margin-bottom: 10px;   
+    outline: none;   
+    padding: 10px;   
+    font-size: 13px;   
+    color: #fff;   
+    text-shadow:1px 1px 1px;   
+    border-top: 1px solid #312E3D;   
+    border-left: 1px solid #312E3D;   
+    border-right: 1px solid #312E3D;   
+    border-bottom: 1px solid #56536A;   
+    border-radius: 4px;   
+    background-color: #2D2D3F;   
+}   
+#but{   
+    width: 300px;   
+    min-height: 20px; 
+      /*设置段落的最小高度 */
+    display: block;   
+    background-color: #4a77d4;   
+    border: 1px solid #3762bc;   
+    color: #fff;   
+    padding: 9px 14px;   
+    font-size: 15px;   
+    line-height: normal;   
+    border-radius: 5px;   
+    margin: 0;   
+}
+    </style>
+</head>
+<body style="background-color: #4a77d4;">
+    <div class="login">
+        <h1>Login</h1>
+        <form action="./首页.html"> 
+            <!-- <label for="username">用户名</label> -->
+            <input type="text" id="uname" value="" placeholder="用户名gy"/><br>
+            <input type="password" id="pwd" value="" placeholder="密码123"/><br>
+            <input type="submit" id="but" value="登录" onclick="return checkuser()"/> 
+            <!-- 返回了true就会打开页面  -->
+        </form> 
+    </div>
+</body> 
+ 
+<script type="text/javascript"> 
+    function getValue(id) { 
+        return document.getElementById(id).value; 
+        // 查找元素
+    } 
+    function checkuser() { 
+        if(getValue('uname') == "gy" && getValue('pwd') == "123") { 
+            return true; 
+        }else { 
+            alert("登录名或密码错误！")
+            // 警告框
+            return false; 
+        } 
+    } 
+</script> 
+</html>

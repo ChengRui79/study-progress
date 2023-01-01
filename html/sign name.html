@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+		button{
+			width: 200px;/*设置按钮宽度*/
+			height: 30px;/*设置按钮高度*/
+			color:white;/*字体颜色*/
+			background-color:cornflowerblue;/*按钮背景颜色*/
+			border-radius: 3px;/*让按钮变得圆滑一点*/
+			border-width: 0;/*消去按钮丑的边框*/
+			margin: 0;
+			outline: none;/*取消轮廓*/
+			font-family: KaiTi;/*字体设置为楷体*/
+			font-size: 17px;/*设置字体大小*/
+			text-align: center;/*字体居中*/
+			cursor: pointer;/*设置鼠标箭头手势*/
+		}
+		button:hover{/*鼠标移动时的颜色变化*/
+			background-color: antiquewhite;
+		}
+	</style>
+</head>
+<body>
+<div style="position:fixed;">
+    <button id="undo">撤销</button>
+    <button id="redo">恢复</button>
+    <input type="range" id="line-width" value="1" min="1" max="20">
+    <input type="checkbox" id="eraser">
+    <label for="eraser">橡皮擦</label>
+</div>
+</body>
+<script>
+    let canvas=document.createElement("canvas");
+    canvas.width=window.innerWidth;
+    canvas.height=window.innerHeight;
+    document.body.appendChild(canvas);
+    let context=canvas.getContext("2d");
+    let undoList=[];
+    let redoList=[];
+    document.getElementById("line-width").addEventListener("change",function(){
+        context.lineWidth=this.value;
+    })
+    document.getElementById("eraser").addEventListener("click",function(){
+        if(this.checked){
+            context.globalCompositeOperation="destination-out";
+        }
+        else{
+            context.globalCompositeOperation="source-over";
+        }
+    })
+    canvas.addEventListener("mousedown",function(e){
+        this.isMousedown=true;
+        context.moveTo(e.pageX,e.pageY);
+        context.beginPath();
+    
+    })
+    canvas.addEventListener("mousemove",function(e){
+        if(this.isMousedown){
+            context.lineTo(e.pageX,e.pageY);
+            context.stroke();
+
+        }
+    })
+    canvas.addEventListener("mouseup",function(e){
+        this.isMousedown=false;
+        undoList.push(context.getImageData(0,0,canvas.width,canvas.height));
+    })
+    canvas.addEventListener("dblclick",function(e){
+        let link=document.createElement("a");
+        link.href=canvas.toDataURL("image/png");
+        link.download="draw.png";
+        link.click();
+    })
+    document.getElementById("undo").addEventListener("click",function(){
+        if(undoList.length>0){
+            redoList.push(undoList.pop());
+            reDraw();
+        }
+    })
+    document.getElementById("redo").addEventListener("click",function(){
+        if(redoList.length>0){
+            undoList.push(redoList.pop());
+            reDraw();
+        }
+    })
+    function reDraw(){
+        if(undoList.length>0){
+            context.putImageData(undoList[undoList.length-1],0,0);
+        }
+        else{
+            context.clearRect(0,0,canvas.width,canvas.height);
+        }
+    }
+    </script>
+</html>
