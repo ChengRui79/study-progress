@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>day2</title>
+    <script>
+        //js的变量数据类型是根据等号右边数据类型确定
+        var age=10;
+        var srr='pink';
+        //js是动态语言 变量的数据类型是可以变换的
+        var x=10;
+        x='pink';
+        //八进制，在数字前加0
+        var num=010;
+        console.log(num);
+        //十六进制，在数字前加0x
+        var num1=0xa
+        console.log(num1);
+        //数值型的最大最小值
+        console.log(Number.MAX_VALUE);
+        console.log(Number.MIN_VALUE);
+        //无穷大，无穷小
+        console.log(Number.MAX_VALUE*2);
+        console.log(-Number.MAX_VALUE*2);
+        // isNaN（）方法判断是否为非数字，是数字返回false，不是数字返回true
+        console.log(isNaN(2));
+        console.log(isNaN('chengrui'));
+        //string涉及引号嵌套，外双内单或外单内双
+        console.log("chengrui是一个'努力'的程序员");
+        // alert('你好，\n我是ChengRui\n一个“努力”的程序员')
+        //字符串的拼接，只要有字符串与其他类型数据拼接，最终结果一定是字符串
+        console.log('你好'+'chengrui');//你好chengrui
+        console.log('我'+22);//我12
+        //交互
+        // var age=prompt('请输入您的年龄：')
+        // alert('您今年已经：'+age+'岁了')
+        //布尔型
+        var flag=true;//flag布尔型
+        var flag1=false;//flag1布尔型
+        console.log(flag+1);//true参与运算当1
+        console.log(flag1+1);//flase参与运算当0
+        //null
+        var space=null;
+        console.log(space+'chengrui');//nullchengrui
+        console.log(space+1);//1
+        //undefined
+        var variable=undefined;
+        console.log(undefined+'chengrui');//undefinedchengrui
+        console.log(undefined+1);//NaN
+        //typeof
+        console.log(typeof variable);
+        console.log(typeof space);
+        console.log(typeof flag);
+        console.log(typeof x);
+
+        //数据类型转换
+        //转换为字符串类型
+
+        //1.toString方法
+        var num=10;
+        var str=num.toString();
+        console.log(typeof str);
+        //2.String(变量)
+        console.log(String(num));
+        //3.+拼接字符串方法
+        console.log(num+'');
+
+        //转换为数字类型
+        //1.parseInt()把字符型转换为数值型，得到的是整数(取整)
+        // var age1=prompt('请输入您的年龄：')
+        // console.log(parseInt(age1));
+        console.log(parseInt('3.14'));//3
+        console.log(parseInt('102px'));//102
+        //2.parseFloat(),把字符型转换为数值型，得到的是小数，浮点数
+        console.log(parseFloat('3.14'));//3.14
+        console.log(parseFloat('102px'));//102
+        //3.Number()
+        var str1='123';
+        console.log(Number(str1));
+        console.log(Number('123'));
+        //利用- * /隐式转换
+
+
+        // var year =prompt('请输入您的出生年份')
+        // var age2=2023-year;
+        // alert('您今年已经'+age2+'岁了')
+
+        //加法器
+        // var num2=prompt('请您输入第一个值');
+        // var num3=prompt('请您输入第二个值');
+        // var result=parseFloat(num2)+parseFloat(num3)
+        // alert('您的结果是'+result)
+
+        //转换为布尔型
+        //Boolean()只能将'',0,NaN,null,undefined转换为false，其他均为true
+        console.log(Boolean(''));//false
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
