@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>day2</title>
+</head>
+<body>
+
+
+<!-- 无序列表 -->
+<ul>
+    <li>榴莲</li>
+    <li>香蕉</li>
+    <li>苹果</li>
+    <li>哈密瓜</li>
+    <li>火龙果</li>
+</ul>
+<!-- 有序列表 -->
+<ol>
+    <li>chengrui:100</li>
+    <li>leafming:98</li>
+    <li>chery:96</li>
+</ol>
+<!-- 自定义列表 -->
+<dl>
+    <dt>帮助中心</dt>
+    <dd>账户管理</dd>
+    <dd>帮助中心</dd>
+</dl>
+
+<!-- 表格标签 -->
+<table border="1" width="500" heighr="300">
+    <caption><strong>学生成绩单</strong></caption>
+    <tr>
+        <th>姓名</th>
+        <th>成绩</th>
+        <th>评语</th>
+    </tr>
+    <tr>
+        <td>chengrui</td>
+        <td>100</td>
+        <td>good</td>
+    </tr>
+    <tr>
+        <td>leafming</td>
+        <td>95</td>
+        <td>good</td>
+    </tr>
+    <tr>
+        <td>Cheryl</td>
+        <td>93</td>
+        <td>good</td>
+    </tr>
+</table>
+
+<table border="1" width="500" heighr="300">
+    <caption><strong>学生成绩单</strong></caption>
+    <thead>
+    <tr>
+        <th>姓名</th>
+        <th>成绩</th>
+        <th>评语</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>chengrui</td>
+        <td rowspan="2">100</td>
+        <td>good</td>
+    </tr>
+    <tr>
+        <td>leafming</td>
+        <!-- <td>100</td> -->
+        <td>good</td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+        <td>Cheryl</td>
+        <td>93</td>
+        <td>good</td>
+    </tr>
+    </tfoot>
+</table>
+<br>
+<!-- 表单标签 -->
+<!-- input系列标签 -->
+<form action="提交地址">
+用户名：<input type="text" placeholder="请输入用户名">
+<br>
+密码框：<input type="password" placeholder="请输入密码">
+<br>
+性别：<input type="radio" name="sex" checked>男<input type="radio" name="sex">女
+<br>
+多选框<input type="checkbox" checked>
+<br>
+上传文件：<input type="file" multiple>
+<br>
+<input type="submit" value="login">
+<input type="reset">
+<input type="button" value="普通按钮">
+</form>
+<br>
+<!-- button按钮标签 -->
+<button>我是按钮</button>
+<button type="submit">提交按钮</button>
+<button type="reset">重置按钮</button>
+<button type="button">普通按钮</button>
+<br>
+<!-- 下拉菜单 -->
+<select>
+    <option>北京</option>
+    <option>上海</option>
+    <option selected>苏州</option>
+    <option>南京</option>
+</select>
+<br>
+<!-- 文本域 -->
+<textarea cols="60" rows="30"></textarea>
+<br>
+<!-- label标签 -->
+性别：
+<input type="radio" name="sex" checked id="nan"><label for="nan">男</label>
+<label><input type="radio" name="sex">女</label>
+<br>
+<hr>
+<!-- 语义化标签 -->
+这是普通文字
+<!-- 无语义标签 -->
+<div>这是div标签</div>
+<div>这是div标签</div>
+<span>这是span标签</span>
+<span>这是span标签</span>
+<br>
+<!-- 有语义标签 -->
+<header>网页头部</header>
+<nav>网页导航</nav>
+<footer>网页底部</footer>
+<aside>网页侧边栏</aside>
+<section>网页区块</section>
+<article>网页文章</article>
+<br>
+<!-- 字符实体 ，网页不认识多个空格，只认识一个-->
+这是HTML文档，学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;习
+</body>
+</html>
