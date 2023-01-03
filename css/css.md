@@ -43,3 +43,11 @@ font-style文字倾斜normal，italic（<em>em</em>标签默认倾斜）
 font-family文字字体
 
 font属性具有复合属性，可连写（font：style weight size family）
+
+文本水平对齐方式text-align：left/right/center
+
+首行缩进text-indent 取值：1.数字+px 2.数字+em（1em=当前font-size大小）
+
+line-height行高（控制两行文字之间距离）line-height，取值：1.数字+px 2.倍数（当前font-size）
+
+ 标签居中：margin: 0 auto;
